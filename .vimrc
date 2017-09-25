@@ -23,16 +23,20 @@ set showmatch
 set ignorecase
 set smartcase
 
-
+let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
-execute 'colorscheme ' . (strftime('%H') < 20 ? 'Tomorrow' : 'Tomorrow-Night-Eighties')
-
+if strftime("%H") >= 5 && strftime("%H") <= 17 
+    execute 'colorscheme Tomorrow'
+else
+    execute 'colorscheme Tomorrow-Night-Eighties'
+endif
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'ChrisKempson/Tomorrow-Theme'
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/syntastic'
