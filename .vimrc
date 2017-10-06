@@ -15,7 +15,6 @@ set colorcolumn=80
 set nu
 set ruler
 set showcmd
-set spell
 syntax on
 set hlsearch
 set incsearch
@@ -23,7 +22,7 @@ set showmatch
 set ignorecase
 set smartcase
 
-let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:ycm_python_binary_path = 'python'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1

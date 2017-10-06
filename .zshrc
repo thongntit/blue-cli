@@ -1,19 +1,23 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+ export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# zsh tmux settings
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART_ONCE=true
+ZSH_TMUX_FIXTERM=true
+ZSH_TMUX_AUTOQUIT=false
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/hiraism/.oh-my-zsh
-
-#Google-Cloud-SDK
-#source '/home/hiraism/Downloads/google-cloud-sdk/path.bash.inc'
-source '/home/hiraism/Downloads/google-cloud-sdk/path.zsh.inc'
+  export TERM="xterm-256color"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs virtualenv)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status load ssh time)
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -56,10 +60,8 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-plugins=(zsh-autosuggestions)
+plugins=(tmux git nyan)
 source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
