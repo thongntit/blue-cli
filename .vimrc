@@ -18,6 +18,7 @@ set incsearch
 set showmatch
 set ignorecase
 set smartcase
+set history=50
 
 "Split Navigations
 set splitbelow
@@ -56,6 +57,15 @@ else
     execute 'colorscheme Tomorrow-Night-Eighties'
 endif
 
+"Syntastic Setting
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 "Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -73,6 +83,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
