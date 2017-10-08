@@ -48,10 +48,14 @@ au BufNewFile,BufRead *.js, *.html, *.css
 
 let python_highlight_all = 1
 let g:ycm_python_binary_path = 'python'
+
+"AIRLINE
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
-if strftime("%H") >= 5 && strftime("%H") <= 17 
+
+"Theme by day/night
+if strftime("%H") >= 5 && strftime("%H") <= 17
     execute 'colorscheme Tomorrow'
 else
     execute 'colorscheme Tomorrow-Night-Eighties'
@@ -67,23 +71,27 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 "Vundle
+"Install git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Vim beauty
 Plugin 'ChrisKempson/Tomorrow-Theme'
-Plugin 'morhetz/gruvbox'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'nvie/vim-flake8'
+"Ez life
 Plugin 'kien/ctrlp.vim'
-Plugin 'vim-scripts/indentpython.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-surround'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
-Plugin 'ntpeters/vim-better-whitespace'
+"Plugin for Python
 Plugin 'davidhalter/jedi-vim'
+Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'nvie/vim-flake8'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'ntpeters/vim-better-whitespace'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
