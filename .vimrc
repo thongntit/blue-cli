@@ -5,19 +5,21 @@ filetype off
 set encoding=utf-8
 
 " Enable folding
- set foldmethod=indent
- set foldlevel=99
+set foldmethod=indent
+set foldlevel=99
+
+" Search
+set hlsearch
+set incsearch
+set showmatch
+set ignorecase
+set smartcase
 
 set cursorline
 set nu
 set ruler
 set showcmd
 syntax on
-set hlsearch
-set incsearch
-set showmatch
-set ignorecase
-set smartcase
 set history=50
 
 "Split Navigations
@@ -86,6 +88,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
+Plugin 'itmammoth/doorboy.vim'
 "Plugin for Python
 Plugin 'davidhalter/jedi-vim'
 Plugin 'jmcantrell/vim-virtualenv'
