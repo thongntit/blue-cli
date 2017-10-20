@@ -86,15 +86,12 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'itmammoth/doorboy.vim'
 "Plugin for Python
 Plugin 'davidhalter/jedi-vim'
-Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'nvie/vim-flake8'
-Plugin 'vim-scripts/indentpython.vim'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'Vimjas/vim-python-pep8-indent'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
