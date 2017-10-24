@@ -22,6 +22,7 @@ set showcmd
 syntax on
 set history=50
 
+
 "Split Navigations
 set splitbelow
 set splitright
@@ -42,7 +43,15 @@ au BufNewFile,BufRead *.py
     \ set colorcolumn=80
 
 " JS HTML CSS
-au BufNewFile,BufRead *.js, *.html, *.css
+au BufNewFile,BufRead  *.html
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2
+au BufNewFile,BufRead  *.js
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2
+au BufNewFile,BufRead  *.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2
