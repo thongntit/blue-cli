@@ -85,11 +85,12 @@ Plugin 'vim-airline/vim-airline-themes'
 "Ez life
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'itmammoth/doorboy.vim'
+Plugin 'scrooloose/nerdcommenter'
 "Plugin for Python
-Plugin 'davidhalter/jedi-vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'Vimjas/vim-python-pep8-indent'
 
