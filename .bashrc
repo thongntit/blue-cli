@@ -123,3 +123,8 @@ if [ -f '/home/hiraism/Downloads/google-cloud-sdk/path.bash.inc' ]; then source 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/hiraism/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/home/hiraism/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+function switchtowindows {
+	    WINDOWS_TITLE=`grep -i 'windows' /boot/grub/grub.cfg|cut -d"'" -f2`
+	        sudo grub-reboot "$WINDOWS_TITLE"
+		    sudo reboot
+	    }

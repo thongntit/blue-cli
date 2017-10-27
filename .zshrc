@@ -1,7 +1,13 @@
 # If you come from bash you might have to change your $PATH.
  export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+function switchtowindows {
+	    WINDOWS_TITLE=`grep -i 'windows' /boot/grub/grub.cfg|cut -d"'" -f2`
+	        sudo grub-reboot "$WINDOWS_TITLE"
+		    sudo reboot
+	    }
+
+
 # zsh tmux settings
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOSTART_ONCE=true
@@ -60,7 +66,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status load ssh time)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux git nyan)
+plugins=(tmux git nyan zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
