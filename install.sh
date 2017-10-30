@@ -42,7 +42,7 @@ then
 else
 	echo "Zsh-autosuggestions is not installed"
 	echo "Installing zsh-autosuggestions"
-	git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+	git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 fi
 
 
@@ -54,7 +54,7 @@ then
 else
 	echo "Tmux-powerline is not installed"
 	echo "Installing tmux-powerline"
-	git clone https://github.com/erikw/tmux-powerline.git ~/.tmux
+	git clone https://github.com/erikw/tmux-powerline.git ~/.tmux/tmux-powerline
 fi
 
 
