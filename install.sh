@@ -9,7 +9,7 @@ do
 	then
 		echo "$i is not installed."
 		echo "Installing $i"
-		$(apt-get install $i)
+		$(apt-get install $i -y) >&2
 	else
 		echo "$i in installed"
 	fi
@@ -23,7 +23,7 @@ if [ -d ~/.oh-my-zsh ]; then
 else
 	echo 'Oh-my-zsh is not installed'
 	echo 'Installing oh-my-zsh'
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" >&2
 fi
 
 # Check if Powerlevel9k theme is installed
@@ -32,7 +32,7 @@ if [ -d ~/.oh-my-zsh/custom/themes/powerlevel9k ]; then
 else
 	echo 'Powerlevel9k theme is not installed'
 	echo 'Installing Powerlevel9k theme'
-	git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+	git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k >&2
 fi
 
 # Check if zsh-autosuggestion is installed
@@ -42,7 +42,8 @@ then
 else
 	echo "Zsh-autosuggestions is not installed"
 	echo "Installing zsh-autosuggestions"
-	git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+	git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions >&2
+
 fi
 
 
@@ -54,7 +55,8 @@ then
 else
 	echo "Tmux-powerline is not installed"
 	echo "Installing tmux-powerline"
-	git clone https://github.com/erikw/tmux-powerline.git ~/.tmux/tmux-powerline
+	git clone https://github.com/erikw/tmux-powerline.git ~/.tmux/tmux-powerline >&2
+
 fi
 
 
@@ -66,7 +68,28 @@ then
 else
 	echo "Vundle is not installed"
 	echo "Installing Vundle"
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim >&2
+fi
+# Install Plugin Vim
 	cp .vimrc ~
 	vim +PluginInstall +qall
+# Check if colors folder in .vim is exist
+if [ -d ~/.vim/colors ]
+then
+	echo "Co thu muc colors"
+else
+	sudo mkdir ~/.vim/colors
+fi
+# Check if Vim themes is copied to colors folder
+if [ -f ~/.vim/colors/Tomorrow.vim ]
+then
+	echo 'Co theme'
+else
+	sudo cp ~/.vim/bundle/Tomorrow-Theme/vim/colors/Tomorrow.vim ~/.vim/colors
+fi
+if [ -f ~/.vim/colors/Tomorrow ]
+then
+	echo 'Co theme'
+else
+	sudo cp ~/.vim/bundle/Tomorrow-Theme/vim/colors/Tomorrow-Night-Eighties.vim ~/.vim/colors
 fi
