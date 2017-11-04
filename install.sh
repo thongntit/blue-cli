@@ -76,20 +76,15 @@ fi
 # Check if colors folder in .vim is exist
 if [ -d ~/.vim/colors ]
 then
-	echo "Co thu muc colors"
+	echo "Colors folder exist"
 else
 	sudo mkdir ~/.vim/colors
 fi
 # Check if Vim themes is copied to colors folder
 if [ -f ~/.vim/colors/Tomorrow.vim ]
 then
-	echo 'Co theme'
+	echo 'Themes Copied'
 else
 	sudo cp ~/.vim/bundle/Tomorrow-Theme/vim/colors/Tomorrow.vim ~/.vim/colors
-fi
-if [ -f ~/.vim/colors/Tomorrow ]
-then
-	echo 'Co theme'
-else
 	sudo cp ~/.vim/bundle/Tomorrow-Theme/vim/colors/Tomorrow-Night-Eighties.vim ~/.vim/colors
 fi
