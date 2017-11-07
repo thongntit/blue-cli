@@ -36,14 +36,13 @@ else
 fi
 
 # Check if zsh-autosuggestion is installed
-if [ -d ~/.zsh/zsh-autosuggestions ]
+if [ -d ~/.oh-my-zsh/plugins/zsh-autosuggestions ]
 then
 	echo "Zsh-autosuggestions is installed"
 else
 	echo "Zsh-autosuggestions is not installed"
 	echo "Installing zsh-autosuggestions"
-	git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions >&2
-
+	git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions >&2
 fi
 
 
