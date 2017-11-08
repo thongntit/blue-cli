@@ -81,6 +81,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+"Eliminating Vim esc delay
+set timeoutlen=1000 ttimeoutlen=0
+
 "Vundle
 "Install git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim

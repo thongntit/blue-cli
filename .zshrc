@@ -6,7 +6,7 @@ function switchtowindows {
 	sudo grub-reboot "$WINDOWS_TITLE"
 	sudo reboot
 }
-function installpowerlinefonts{
+function installpowerlinefonts {
 	# clone
 	git clone https://github.com/powerline/fonts.git --depth=1
 	# install
@@ -22,6 +22,9 @@ ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOSTART_ONCE=true
 ZSH_TMUX_FIXTERM=true
 ZSH_TMUX_AUTOQUIT=false
+
+# eliminating delay in vim
+KEYTIMEOUT=1
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
