@@ -42,7 +42,7 @@ then
 else
 	echo "Zsh-autosuggestions is not installed"
 	echo "Installing zsh-autosuggestions"
-	git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions >&2
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions >&2
 fi
 
 
