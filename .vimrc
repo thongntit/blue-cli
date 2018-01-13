@@ -42,6 +42,21 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
     \ set colorcolumn=80
 
+" Clang
+au BufNewFile,BufRead *.c
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set expandtab |
+    \ set autoindent |
+
+au BufNewFile,BufRead *.cpp
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set expandtab |
+    \ set autoindent |
+
 " JS HTML CSS
 au BufNewFile,BufRead  *.html
     \ set tabstop=2 |
@@ -59,6 +74,7 @@ au BufNewFile,BufRead  *.css
 
 let python_highlight_all = 1
 let g:ycm_python_binary_path = 'python'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 "AIRLINE
 let g:airline#extensions#tabline#enabled = 1
