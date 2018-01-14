@@ -2,6 +2,8 @@
 
 
 cp .vimrc ~
+cp .c.py ~/.vim
+cp .cpp.py ~/.vim
 cp .tmux.conf ~
 cp .bashrc ~
 cp .zshrc ~

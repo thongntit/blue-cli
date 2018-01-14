@@ -43,38 +43,32 @@ au BufNewFile,BufRead *.py
     \ set colorcolumn=80
 
 " Clang
-au BufNewFile,BufRead *.c
+au BufNewFile,BufRead *.c,*.h
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
     \ set expandtab |
     \ set autoindent |
+    \let g:ycm_global_ycm_extra_conf = '~/.vim/.c.py' |
 
-au BufNewFile,BufRead *.cpp
+au BufNewFile,BufRead *.cpp,*.hpp
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
     \ set expandtab |
     \ set autoindent |
+    \let g:ycm_global_ycm_extra_conf = '~/.vim/.cpp.py' |
 
 " JS HTML CSS
-au BufNewFile,BufRead  *.html
+au BufNewFile,BufRead *.html,*.js,*.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2
-au BufNewFile,BufRead  *.js
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2
-au BufNewFile,BufRead  *.css
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2
-
-
+" Ycm Config
 let python_highlight_all = 1
 let g:ycm_python_binary_path = 'python'
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "AIRLINE
 let g:airline#extensions#tabline#enabled = 1
