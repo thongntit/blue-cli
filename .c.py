@@ -29,6 +29,7 @@ flags = [
     # harmful
     '-isystem', '/System/Library/Frameworks/Python.framework/Headers',
     '-isystem', '/usr/include/',
+    '-isystem', '/usr/include/x86_64-linux-gnu/',
     '-isystem', '/usr/local/include/eigen3',
     '-I', 'include'
     '-I.'

@@ -43,7 +43,7 @@ au BufNewFile,BufRead *.py
     \ set colorcolumn=80
 
 " Clang
-au BufNewFile,BufRead *.c,*.h
+au BufNewFile,BufRead *.c
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
@@ -90,6 +90,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_highlighting=0
 
 "Eliminating Vim esc delay
 set timeoutlen=1000 ttimeoutlen=0
@@ -112,6 +113,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'itmammoth/doorboy.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'godlygeek/tabular'
 "Plugin for Python
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'Vimjas/vim-python-pep8-indent'
