@@ -1,4 +1,6 @@
 # If you come from bash you might have to change your $PATH.
+#
+export no_proxy=.tma.com.vn
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 function switchtowindows {
