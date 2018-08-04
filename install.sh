@@ -11,7 +11,7 @@ do
 		echo "Installing $i"
 		$(apt-get install $i -y) >&2
 	else
-		echo "$i in installed"
+		echo "$i is installed"
 	fi
 done
 
