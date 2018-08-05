@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 #Check if program is installed, if not install it.
 declare -a arr=( "git" "zsh" "curl" "tmux")
 for i in "${arr[@]}"
@@ -9,7 +8,7 @@ do
 	then
 		echo "$i is not installed."
 		echo "Installing $i"
-		$(apt-get install $i -y) >&2
+		$(apt install $i -y) >&2
 	else
 		echo "$i is installed"
 	fi
@@ -20,24 +19,6 @@ done
 # Check if oh my zsh is installed
 if [ -d ~/.oh-my-zsh ]; then
 	echo 'Oh-my-zsh is installed'
-	# Check if Powerlevel9k theme is installed
-	if [ -d ~/.oh-my-zsh/custom/themes/powerlevel9k ]; then
-		echo 'Powerlevel9k them is installed'
-	else
-		echo 'Powerlevel9k theme is not installed'
-		echo 'Installing Powerlevel9k theme'
-		git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k >&2
-	fi
-
-	# Check if zsh-autosuggestion is installed
-	if [ -d ~/.oh-my-zsh/plugins/zsh-autosuggestions ]
-	then
-		echo "Zsh-autosuggestions is installed"
-	else
-		echo "Zsh-autosuggestions is not installed"
-		echo "Installing zsh-autosuggestions"
-		git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions >&2
-	fi
 
 
 else
@@ -47,15 +28,26 @@ else
 fi
 
 
-### TMUX
-# Check if tmux powerline is installed
-if [ -d ~/.tmux/tmux-powerline ]
+# Check if zsh-autosuggestion is installed
+if [ -d ~/.oh-my-zsh/plugins/zsh-autosuggestions ]
 then
-	echo "Tmux-powerline is installed"
+	echo "Zsh-autosuggestions is installed"
 else
-	echo "Tmux-powerline is not installed"
-	echo "Installing tmux-powerline"
-	git clone https://github.com/erikw/tmux-powerline.git ~/.tmux/tmux-powerline >&2
+	echo "Zsh-autosuggestions is not installed"
+	echo "Installing zsh-autosuggestions"
+	mkdir -pv ~/.oh-my-zsh/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions >&2
+fi
+
+### TMUX
+## Check if tmux plugins manager is installed
+if [ -d ~/.tmux/plugins/tpm ]
+then
+	echo "Tmux plugins manager is installed"
+else
+	echo "Tmux plugins manager is not installed"
+	echo "Installing tmux plugins manager"
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 fi
 
@@ -70,6 +62,7 @@ else
 	echo "Installing Vundle"
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim >&2
 fi
+
 # Install Plugin Vim
 cp .vimrc ~
 vim +PluginInstall +qall
@@ -78,7 +71,7 @@ if [ -d ~/.vim/colors ]
 then
 	echo "Colors folder exist"
 else
-	sudo mkdir ~/.vim/colors
+	mkdir -pv ~/.vim/colors
 fi
 # Check if Vim themes is copied to colors folder
 if [ -f ~/.vim/colors/Tomorrow.vim ]

@@ -70,10 +70,10 @@ let g:ycm_python_binary_path = 'python'
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
-"AIRLINE
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='tomorrow'
-let g:airline_powerline_fonts = 1
+""AIRLINE
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline_theme='tomorrow'
+"let g:airline_powerline_fonts = 1
 
 "Theme by day/night
 if strftime("%H") >= 5 && strftime("%H") <= 17
@@ -103,12 +103,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "Vim beauty
 Plugin 'ChrisKempson/Tomorrow-Theme'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
 "Ez life
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'itmammoth/doorboy.vim'
