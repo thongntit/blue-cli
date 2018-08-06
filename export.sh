@@ -8,4 +8,3 @@ mv ~/.bashrc ~/.bashrc.bak
 cp .bashrc ~
 mv ~/.zshrc ~/.zshrc.bak
 cp .zshrc ~
-cp default.sh ~/.tmux/tmux-powerline/themes
