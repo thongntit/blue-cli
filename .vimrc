@@ -77,9 +77,13 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "Theme by day/night
 if strftime("%H") >= 5 && strftime("%H") <= 17
-    execute 'colorscheme Tomorrow'
+    "execute 'colorscheme Tomorrow'
+    execute 'set background=light'
+    execute 'colorscheme solarized'
 else
-    execute 'colorscheme Tomorrow-Night-Eighties'
+    "execute 'colorscheme Tomorrow-Night-Eighties'
+    execute 'set background=dark'
+    execute 'colorscheme solarized'
 endif
 
 "Syntastic Setting
@@ -105,6 +109,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ChrisKempson/Tomorrow-Theme'
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
+Plugin 'altercation/vim-colors-solarized'
 "Ez life
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
