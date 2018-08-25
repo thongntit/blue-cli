@@ -81,3 +81,10 @@ else
 	sudo cp ~/.vim/bundle/Tomorrow-Theme/vim/colors/Tomorrow.vim ~/.vim/colors
 	sudo cp ~/.vim/bundle/Tomorrow-Theme/vim/colors/Tomorrow-Night-Eighties.vim ~/.vim/colors
 fi
+# Check if Solarized theme is copied to .vim/colors folder
+if [ -f ~/.vim/colors/solarized.vim ]
+then
+	echo "Solaried Copied"
+else
+	sudo cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim ~/.vim/colors
+fi

@@ -87,7 +87,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status load ssh time)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux git nyan zsh-autosuggestions)
+plugins=(tmux git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
