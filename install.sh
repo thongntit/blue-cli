@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Check if program is installed, if not install it.
-declare -a arr=( "git" "zsh" "curl" "tmux")
+declare -a arr=( "git" "zsh" "curl" "tmux" "vim")
 for i in "${arr[@]}"
 do
 	if ! [ -x "$(command -v $i)" ]
