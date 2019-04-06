@@ -19,12 +19,29 @@ done
 # Check if oh my zsh is installed
 if [ -d ~/.oh-my-zsh ]; then
 	echo 'Oh-my-zsh is installed'
-
-
 else
 	echo 'Oh-my-zsh is not installed'
 	echo 'Installing oh-my-zsh'
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" >&2
+fi
+
+# Check if Powerlevel9k theme is installed
+if [ -d ~/.oh-my-zsh/custom/themes/powerlevel9k ]; then
+	echo 'Powerlevel9k them is installed'
+else
+	echo 'Powerlevel9k theme is not installed'
+	echo 'Installing Powerlevel9k theme'
+	git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k >&2
+fi
+
+# Check if zsh-autosuggestion is installed
+if [ -d ~/.oh-my-zsh/plugins/zsh-autosuggestions ]
+then
+	echo "Zsh-autosuggestions is installed"
+else
+	echo "Zsh-autosuggestions is not installed"
+	echo "Installing zsh-autosuggestions"
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions >&2
 fi
 
 
