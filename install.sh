@@ -4,12 +4,13 @@
 declare -a arr=( "git" "zsh" "curl" "tmux" "vim-gnome" "fonts-powerline")
 for i in "${arr[@]}"
 do
-	if [ "$(dpkg --list | grep $i)" ]
+	if [ "$(dpkg --list | grep "ii  $i")" ]
 	then
 		echo "$i is installed"
 	else
 		echo "$i is not installed."
 		echo "Installing $i"
+<<<<<<< HEAD
 <<<<<<< HEAD
 		$(apt install $i -y) >&2
 	else
@@ -17,6 +18,9 @@ do
 =======
 		$(apt-get install $i -y) >&2
 >>>>>>> Change check exist syntax and remove exec zsh from bash to prevent login loop
+=======
+		apt-get install $i -y > /dev/null
+>>>>>>> Send all log to /dev/null modify checking syntax
 	fi
 done
 
@@ -27,7 +31,7 @@ if [ -f ~/.oh-my-zsh/oh-my-zsh.sh ]; then
 else
 	echo 'Oh-my-zsh is not installed'
 	echo 'Installing oh-my-zsh'
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" >&2
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" > /dev/null
 fi
 
 # Check if Powerlevel9k theme is installed
@@ -36,7 +40,7 @@ if [ -f ~/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme ]; then
 else
 	echo 'Powerlevel9k theme is not installed'
 	echo 'Installing Powerlevel9k theme'
-	git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k >&2
+	git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k > /dev/null
 fi
 
 # Check if zsh-autosuggestion is installed
@@ -46,7 +50,7 @@ then
 else
 	echo "Zsh-autosuggestions is not installed"
 	echo "Installing zsh-autosuggestions"
-	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions >&2
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions > /dev/null
 fi
 
 
@@ -67,9 +71,15 @@ if [ -f ~/.tmux/tmux-powerline/powerline.sh ]
 then
 	echo "Tmux plugins manager is installed"
 else
+<<<<<<< HEAD
 	echo "Tmux plugins manager is not installed"
 	echo "Installing tmux plugins manager"
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+=======
+	echo "Tmux-powerline is not installed"
+	echo "Installing tmux-powerline"
+	git clone https://github.com/erikw/tmux-powerline.git ~/.tmux/tmux-powerline > /dev/null
+>>>>>>> Send all log to /dev/null modify checking syntax
 
 fi
 
@@ -82,7 +92,7 @@ then
 else
 	echo "Vundle is not installed"
 	echo "Installing Vundle"
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim >&2
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim > /dev/null
 fi
 
 # Install Plugin Vim
