@@ -4,20 +4,19 @@
 declare -a arr=( "git" "zsh" "curl" "tmux" "vim-gnome" "fonts-powerline")
 for i in "${arr[@]}"
 do
-	if ! [ -x "$(command -v $i)" ]
+	if [ "$(dpkg --list | grep $i)" ]
 	then
+		echo "$i is installed"
+	else
 		echo "$i is not installed."
 		echo "Installing $i"
-		$(apt install $i -y) >&2
-	else
-		echo "$i is installed"
+		$(apt-get install $i -y) >&2
 	fi
 done
 
-
 ### ZSH
 # Check if oh my zsh is installed
-if [ -d ~/.oh-my-zsh ]; then
+if [ -f ~/.oh-my-zsh/oh-my-zsh.sh ]; then
 	echo 'Oh-my-zsh is installed'
 else
 	echo 'Oh-my-zsh is not installed'
@@ -26,7 +25,7 @@ else
 fi
 
 # Check if Powerlevel9k theme is installed
-if [ -d ~/.oh-my-zsh/custom/themes/powerlevel9k ]; then
+if [ -f ~/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme ]; then
 	echo 'Powerlevel9k them is installed'
 else
 	echo 'Powerlevel9k theme is not installed'
@@ -35,7 +34,7 @@ else
 fi
 
 # Check if zsh-autosuggestion is installed
-if [ -d ~/.oh-my-zsh/plugins/zsh-autosuggestions ]
+if [ -f ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]
 then
 	echo "Zsh-autosuggestions is installed"
 else
@@ -57,8 +56,8 @@ else
 fi
 
 ### TMUX
-## Check if tmux plugins manager is installed
-if [ -d ~/.tmux/plugins/tpm ]
+# Check if tmux powerline is installed
+if [ -f ~/.tmux/tmux-powerline/powerline.sh ]
 then
 	echo "Tmux plugins manager is installed"
 else
@@ -71,7 +70,7 @@ fi
 
 ### Vim
 # Check if Vundle is installed
-if [ -d ~/.vim/bundle/Vundle.vim ]
+if [ -f ~/.vim/bundle/Vundle.vim/README.md ]
 then
 	echo "Vundle is installed"
 else
