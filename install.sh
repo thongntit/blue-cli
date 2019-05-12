@@ -1,26 +1,16 @@
 #!/bin/bash
 
 #Check if program is installed, if not install it.
-declare -a arr=( "git" "zsh" "curl" "tmux" "vim-gnome" "fonts-powerline")
+declare -a arr=( "git" "zsh" "curl" "tmux" "vim")
 for i in "${arr[@]}"
 do
-	if [ "$(dpkg --list | grep "ii  $i")" ]
+	if ! [ -x "$(command -v $i)" ]
 	then
-		echo "$i is installed"
-	else
 		echo "$i is not installed."
 		echo "Installing $i"
-<<<<<<< HEAD
-<<<<<<< HEAD
 		$(apt install $i -y) >&2
 	else
 		echo "$i is installed"
-=======
-		$(apt-get install $i -y) >&2
->>>>>>> Change check exist syntax and remove exec zsh from bash to prevent login loop
-=======
-		apt-get install $i -y > /dev/null
->>>>>>> Send all log to /dev/null modify checking syntax
 	fi
 done
 
@@ -74,15 +64,9 @@ if [ -f ~/.tmux/tmux-powerline/powerline.sh ]
 then
 	echo "Tmux plugins manager is installed"
 else
-<<<<<<< HEAD
-	echo "Tmux plugins manager is not installed"
-	echo "Installing tmux plugins manager"
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-=======
 	echo "Tmux-powerline is not installed"
 	echo "Installing tmux-powerline"
 	git clone https://github.com/erikw/tmux-powerline.git ~/.tmux/tmux-powerline > /dev/null
->>>>>>> Send all log to /dev/null modify checking syntax
 
 fi
 

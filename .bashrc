@@ -2,11 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-<<<<<<< HEAD
-zsh
-
-=======
->>>>>>> Remove exec zsh from bash to remove login loop
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
