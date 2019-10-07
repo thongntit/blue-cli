@@ -66,6 +66,20 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
+"COC Config
+let g:coc_global_extensions = [
+  \ 'coc-json',
+  \ 'coc-yaml',
+  \ 'coc-html',
+  \ 'coc-css',
+  \ 'coc-tsserver',
+  \ 'coc-prettier',
+  \ 'coc-highlight',
+  \ 'coc-emmet',
+  \ 'coc-snippets',
+  \ 'coc-git'
+  \ ]
+
 " auto-install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
 	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
