@@ -96,6 +96,15 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_highlighting=0
 
+"Javascript
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+augroup javascript_folding
+    au!
+    au FileType javascript setlocal foldmethod=syntax
+augroup END
+
 "Eliminating Vim esc delay
 set timeoutlen=1000 ttimeoutlen=0
 
@@ -113,7 +122,7 @@ Plugin 'altercation/vim-colors-solarized'
 "Ez life
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'itmammoth/doorboy.vim'
@@ -122,6 +131,10 @@ Plugin 'godlygeek/tabular'
 "Plugin for Python
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'Vimjas/vim-python-pep8-indent'
+"Plugin for JS
+Plugin 'pangloss/vim-javascript'
+Plugin 'neoclide/coc.nvim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

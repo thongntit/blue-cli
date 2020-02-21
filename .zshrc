@@ -1,8 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 #
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+alias "cors"="google-chrome --disable-web-security --user-data-dir=\"$HOME/chromeData\""
+alias "vim"="nvim.appimage"
+export PATH=$HOME/bin:/usr/local/go/bin:$PATH
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export PCPATH=$HOME/ProgramFiles/pycharm/bin
+export PATH=$PATH:$GOPATH/bin:$PCPATH
 
 function switchtowindows {
 	WINDOWS_TITLE=`grep -i 'windows' /boot/grub/grub.cfg|cut -d"'" -f2`
@@ -14,7 +17,8 @@ function switchtowindows {
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOSTART_ONCE=true
 ZSH_TMUX_FIXTERM=true
-ZSH_TMUX_AUTOQUIT=false
+ZSH_TMUX_AUTOQUIT=true
+#tmux source ~/.tmux.conf
 
 # eliminating delay in vim
 KEYTIMEOUT=1
@@ -26,7 +30,7 @@ export TERM="xterm-256color"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="spaceship"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs virtualenv)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status load ssh time)
 # Uncomment the following line to use case-sensitive completion.
@@ -71,7 +75,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status load ssh time)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux git zsh-autosuggestions)
+plugins=(tmux git zsh-autosuggestions docker-compose docker)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
@@ -101,3 +105,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="/home/thongnt/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
