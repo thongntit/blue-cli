@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export CLI_WORKDIR=$(cd $(dirname $0) && pwd)
+
 cli_help() {
   cli_name=${0##*/}
   echo "
@@ -17,6 +19,9 @@ Commands:
 }
 
 case "$1" in
+  export)
+    "$CLI_WORKDIR/commands/export.sh" $CLI_WORKDIR
+    ;;
   *)
     cli_help
     ;;
