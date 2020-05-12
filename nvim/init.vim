@@ -19,6 +19,7 @@ set showcmd
 syntax on
 set history=50
 
+" Tab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -80,6 +81,9 @@ let g:coc_global_extensions = [
   \ 'coc-git'
   \ ]
 
+cabbrev q <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'close' : 'q')<CR>
+
+
 " auto-install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
 	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
@@ -102,5 +106,6 @@ Plug 'itmammoth/doorboy.vim'
 Plug 'alvan/vim-closetag'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'mxw/vim-jsx'
+
 
 call plug#end()
