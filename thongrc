@@ -25,6 +25,9 @@ case "$1" in
   export)
     "$CLI_WORKDIR/commands/export.sh" $CLI_WORKDIR
     ;;
+  revert)
+    "$CLI_WORKDIR/commands/revert.sh" $CLI_WORKDIR
+    ;;
   *)
     cli_help
     ;;
