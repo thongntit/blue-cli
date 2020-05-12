@@ -14,7 +14,7 @@ Commands:
     import     Copy local config files to stash
     export     Copy stash config files to local
     revert     Undo export command
-    *          Show avaible command
+    *          Show available command
   "
 }
 
