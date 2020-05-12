@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CLI_DIR=$1
-NVIM_DIR=~/.config/nvim
+NVIM_DIR=$HOME/.config/nvim
 
 echo "Backup config files"
 mkdir -p $CLI_DIR/backup/nvim

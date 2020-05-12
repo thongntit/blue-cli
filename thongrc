@@ -19,6 +19,9 @@ Commands:
 }
 
 case "$1" in
+  import)
+    "$CLI_WORKDIR/commands/import.sh" $CLI_WORKDIR
+    ;;
   export)
     "$CLI_WORKDIR/commands/export.sh" $CLI_WORKDIR
     ;;
