@@ -28,6 +28,9 @@ case "$1" in
   revert)
     "$CLI_WORKDIR/commands/revert.sh" $CLI_WORKDIR
     ;;
+  setup)
+    "$CLI_WORKDIR/commands/setup.sh" $CLI_WORKDIR $2
+    ;;
   *)
     cli_help
     ;;
