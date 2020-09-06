@@ -10,7 +10,7 @@ Version: 0.1.0
 Usage: $cli_name COMMAND
 
 Commands:
-    setup      Setup Development Enviroment
+    install    Setup Development Enviroment
     import     Copy local config files to stash
     export     Copy stash config files to local
     revert     Undo export command
@@ -28,8 +28,8 @@ case "$1" in
   revert)
     "$CLI_WORKDIR/commands/revert.sh" $CLI_WORKDIR
     ;;
-  setup)
-    "$CLI_WORKDIR/commands/setup.sh" $CLI_WORKDIR $2
+  install)
+    "$CLI_WORKDIR/commands/install.sh" $CLI_WORKDIR $2
     ;;
   *)
     cli_help

@@ -7,7 +7,9 @@ fi
 
 # Package manager tools
 PM="apt-get"
-#Check if program is installed, if not install it.
+# Update package list
+$PM update
+# Check if program is installed, if not install it.
 declare -a arr=( "git" "zsh" "curl" "tmux" "vim" "fonts-powerline")
 for i in "${arr[@]}"
 do
