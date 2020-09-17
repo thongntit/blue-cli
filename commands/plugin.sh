@@ -25,7 +25,7 @@ else
 fi
 
 ### TMUX
-# Check if tmux powerline is installed
+# Check if oh-my-tmux is installed
 if [ -f ~/.tmux/.tmux.conf ]
 then
 	echo "oh-my-tmux was installed "
