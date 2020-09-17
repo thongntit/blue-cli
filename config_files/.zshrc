@@ -33,6 +33,7 @@ if ! zgen saved; then
    # specify plugins here
    zgen oh-my-zsh
    zgen oh-my-zsh plugins/git
+   zgen oh-my-zsh plugins/tmux
    zgen oh-my-zsh plugins/sudo
    zgen oh-my-zsh plugins/command-not-found
    zgen oh-my-zsh plugins/docker
