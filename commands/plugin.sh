@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Check if zsh-autosuggestion is installed
+# Check if zgen is installed
 if [ -d ~/.zgen ]
 then
 	echo "zgen was installed"
@@ -10,7 +10,15 @@ else
 	git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
 fi
 
-### TMUX
+if [ -d ~/.nvm ]
+then
+	echo "nvm was installed"
+else
+	echo "nvm has not been installed"
+	echo "Installing nvm"
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+fi
+
 # Check if oh-my-tmux is installed
 if [ -f ~/.tmux/.tmux.conf ]
 then
