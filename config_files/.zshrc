@@ -2,11 +2,14 @@
 alias "cors"="google-chrome --disable-web-security --user-data-dir=\"$HOME/chromeData\""
 alias "vim"="nvim.appimage"
 alias "sl"="ls"
+alias loadnvm=". $HOME/.nvm/nvm.sh"
 
 # Enviroment paths & variables
-export PATH=$HOME/bin:/usr/local/go/bin:$PATH
-export PATH=$PATH:$GOPATH/bin:$PCPATH:$REACTPATH
 export GOPATH=$HOME/go
+#export PATH=$PATH:/usr/local/go/bin
+# Create symlink instead
+#ln -s /usr/local/go/bin/go /usr/bin/go
+#ln -s /usr/local/go/bin/gofmt /usr/bin/gofmt
 export ZSH=~/.oh-my-zsh
 export TERM="xterm-256color"
 
@@ -22,9 +25,6 @@ ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOSTART_ONCE=true
 ZSH_TMUX_FIXTERM=true
 ZSH_TMUX_AUTOQUIT=true
-
-export NVM_DIR="/home/thongnt/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
@@ -44,3 +44,4 @@ if ! zgen saved; then
   # generate the init script from plugins above
   zgen save
 fi
+
