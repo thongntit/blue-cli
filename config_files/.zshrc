@@ -7,9 +7,6 @@ alias loadnvm=". $HOME/.nvm/nvm.sh"
 # Enviroment paths & variables
 export GOPATH=$HOME/go
 #export PATH=$PATH:/usr/local/go/bin
-# Create symlink instead
-#ln -s /usr/local/go/bin/go /usr/bin/go
-#ln -s /usr/local/go/bin/gofmt /usr/bin/gofmt
 export ZSH=~/.oh-my-zsh
 export TERM="xterm-256color"
 
@@ -39,7 +36,7 @@ if ! zgen saved; then
    zgen oh-my-zsh plugins/docker
    zgen oh-my-zsh plugins/docker-compose
    zgen load zsh-users/zsh-autosuggestions
-   zgen load denysdovhan/spaceship-prompt spaceship
+   zgen oh-my-zsh themes/robbyrussell
    zgen load zsh-users/zsh-syntax-highlighting
   # generate the init script from plugins above
   zgen save
