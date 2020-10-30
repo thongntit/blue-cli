@@ -30,3 +30,13 @@ else
 	ln -s -f .tmux/.tmux.conf
 	cp .tmux/.tmux.conf.local .
 fi
+
+# Install TPM
+if [ -d ~/.tmux/plugins/tpm ]
+then
+  echo "TPM was installed"
+else
+  echo "TPM has not been installed"
+  echo "Installing TPM"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
