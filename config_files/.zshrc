@@ -6,7 +6,10 @@ alias loadnvm=". $HOME/.nvm/nvm.sh"
 
 # Enviroment paths & variables
 export GOPATH=$HOME/go
-#export PATH=$PATH:/usr/local/go/bin
+# Create symlink instead
+#ln -s /usr/local/go/bin/go /usr/bin/go
+#ln -s /usr/local/go/bin/gofmt /usr/bin/gofmt
+export PATH=$PATH:/usr/local/go/bin
 export ZSH=~/.oh-my-zsh
 export TERM="xterm-256color"
 
