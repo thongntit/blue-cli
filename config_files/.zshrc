@@ -1,15 +1,16 @@
 # Alias
 alias "cors"="google-chrome --disable-web-security --user-data-dir=\"$HOME/chromeData\""
-alias "vim"="nvim.appimage"
+alias "vim"="nvim"
 alias "sl"="ls"
 alias loadnvm=". $HOME/.nvm/nvm.sh"
 
 # Enviroment paths & variables
+export GOROOT='/usr/local/go'
 export GOPATH=$HOME/go
 # Create symlink instead
 #ln -s /usr/local/go/bin/go /usr/bin/go
 #ln -s /usr/local/go/bin/gofmt /usr/bin/gofmt
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:~/.sdk/flutter/bin:/Users/thongnt/Library/Python/3.8/bin:$GOPATH/bin
 export ZSH=~/.oh-my-zsh
 export TERM="xterm-256color"
 
@@ -18,6 +19,16 @@ function switchtowindow {
   WINDOWS_TITLE=`grep -i 'windows' /boot/grub/grub.cfg|cut -d"'" -f2`
   sudo grub-reboot "$WINDOWS_TITLE"
   sudo reboot
+}
+
+function gcfpersonal {
+  git config user.name "Thong Nguyen"
+  git config user.email "thongnt.it@gmail.com"
+}
+
+function gcfwork {
+  git config user.name "Thong Nguyen"
+  git config user.email "thongnguyen@chotot.vn"
 }
 
 # zsh tmux settings
@@ -39,9 +50,13 @@ if ! zgen saved; then
    zgen oh-my-zsh plugins/docker
    zgen oh-my-zsh plugins/docker-compose
    zgen load zsh-users/zsh-autosuggestions
-   zgen oh-my-zsh themes/robbyrussell
    zgen load zsh-users/zsh-syntax-highlighting
+   zgen load b4b4r07/emoji-cli
+   zgen load sobolevn/wakatime-zsh-plugin
+   zgen load spaceship-prompt/spaceship-prompt spaceship
   # generate the init script from plugins above
   zgen save
 fi
 
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
