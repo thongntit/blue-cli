@@ -1,26 +1,25 @@
 package main
 
 import (
-    "log"
-    "os"
+	"fmt"
+	"log"
+	"os"
 
-    "github.com/urfave/cli/v2"
+	"github.com/thongntit/hcli/commands"
+	"github.com/urfave/cli/v2"
 )
 
 func main() {
-    app := &cli.App{
-        Flags: []cli.Flag{
-            &cli.StringFlag{
-                Name:    "lang",
-                Aliases: []string{"l"},
-                Value:   "english",
-                Usage:   "language for the greeting",
-                EnvVars: []string{"LEGACY_COMPAT_LANG", "APP_LANG", "LANG"},
-            },
-        },
-    }
+	fmt.Println("golang")
+	app := &cli.App{
+		Name:     "hcli",
+		Usage:    "A cli program to bootstrap development process",
+		HelpName: "hcli",
+		Version:  "0.1.0",
+		Commands: []*cli.Command{commands.Install, commands.Export, commands.Import, commands.Revert},
+	}
 
-    if err := app.Run(os.Args); err != nil {
-        log.Fatal(err)
-    }
+	if err := app.Run(os.Args); err != nil {
+		log.Fatal(err)
+	}
 }
